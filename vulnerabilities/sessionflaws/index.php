@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); session_regenerate_id();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,9 +47,9 @@
 
             <div class="col-md-9">
 
-               <?php 
+               <?php
                     include('home.php');
-                        
+
                 ?>
 
             </div>

@@ -2,6 +2,7 @@ version: "3.8"
 services:
   db:
     image: mysql:5.7
+    command: mysqld --general-log=1 --general-log-file=/var/log/mysql/general-log.log
     restart: always
     volumes:
       - ./docker/db:/var/lib/mysql
@@ -13,7 +14,7 @@ services:
     build: .
     restart: always
     volumes:
-      - "./:/var/www/xvwa/"
+      - "./:/var/www/html/xvwa/"
     ports:
       - 80:80
     depends_on:

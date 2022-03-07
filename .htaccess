@@ -1,0 +1,17 @@
+<FilesMatch "\.ht.*$">
+	Order deny,allow
+	Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(sql|ini)$">
+	Order deny,allow
+	Deny from all
+	Allow from 127.0.0.1
+</FilesMatch>
+
+<Files config.php>
+	AuthType Basic
+	AuthName "Restricted Files"
+	AuthUserFile ".htpasswd"
+	Require user gentil
+</Files>
