@@ -46,3 +46,11 @@ Requête avec PDO : `SELECT * FROM caffaine WHERE itemname LIKE '%\' UNION SELEC
 
 Avec le rajout de `htmlentities`, la balise script apparait
 
+## Mot de passe
+
+> L'option Salt est obsolète. Il est préférable d'utiliser simplement le sel qui est généré par défaut. À partir de PHP 8.0.0, un sel explicitement fournit est ignoré.
+> <https://www.php.net/manual/fr/function.password-hash.php>
+
+Je n'ai donc pas passé de salt à la fonction `password_hash`.
+
+Pour supporter les anciens mots de passe, j'ai laissé la verification par md5.

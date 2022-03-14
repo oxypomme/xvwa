@@ -38,7 +38,7 @@
                             echo "Passwords don't match !! Try Again";
                         }else{
                             $stmt = $conn1->prepare("UPDATE users set password=:pass where username=:user");
-                            $stmt->bindParam(':pass', md5($password));
+                            $stmt->bindParam(':pass', password_hash($password, PASSWORD_DEFAULT));
                             $stmt->bindParam(':user', $current_user);
                             $stmt->execute(); 
                             if($stmt->rowCount() > 0){
